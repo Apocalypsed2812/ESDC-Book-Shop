@@ -1,0 +1,159 @@
+<div class="app__container">
+    {{> headers/headerStaffk}}
+    <div class="staff-product">
+        <div class="grid wide">
+            <h2 class="text-center text-danger pt-5" style="font-size: 2.5rem;">Quản lý sản phẩm</h2>
+            <div style="overflow-x:auto;">
+                <a class="btn-add-product" href="/staff/add_product">Thêm sản phẩm +</a>
+                <table cellpadding="10" cellspacing="10" border="0" class="table table-product">
+                    <thead style="text-align: center;">
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>Tên sản phẩm</td>
+                            <td>Giá</td>
+                            <td>Số lượng</td>
+                            <td>Loại sản phẩm</td>
+                        </tr>
+                    </thead>					
+                    <tbody id="tbody" style="text-align: center;">
+                        {{#each product}}
+                            <tr class="item">
+                                <td style="width: 160px">
+                                    <a class="view-product btn-staff-product" data-name="{{name}}" data-description="{{description}}" data-category="{{category}}" data-image="{{image}}">
+                                        <i class="fas fa-eye"></i> 
+                                    </a>
+                                    <a href="#" class="edit-product btn-staff-product" data-id="{{_id}}" data-name="{{name}}" data-description="{{description}}" data-category="{{category}}" data-image="{{image}}" data-quantity="{{quantity}}" data-old_price="{{old_price}}" data-new_price="{{new_price}}">
+                                        <i class="fas fa-pen"></i>
+                                    </a>
+                                    <a href="#" class="staff-delete-product btn-staff-product" data-id="{{_id}}" data-name="{{name}}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                                <td><img src="/assets/img/{{image}}" style="width: 50px; height: 50px"></td>
+                                <td>{{name}}</td>
+                                <td>{{new_price}}</td>
+                                <td>{{quantity}}</td>	
+                                <td>{{category}}</td>					
+                            </tr>
+                        {{/each}}
+                        {{#if error}}
+                            <input type="hidden" value="1" class="error-add-product">
+                            {{else}}
+                            <input type="hidden" value="0" class="error-add-product">
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{> footers/footerAdmin}}
+</div>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+{{!-- View Product --}}
+<div class="modal modal-view-product">
+    <div class="modal__overlay"></div>
+    <div class="modal__body modal__container">
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <h2 class="view-product-heading">Xem thông tin sản phẩm</h2>
+                <div class="form-group" style="font-size: 1.8rem">
+                    <span for="title">Tên Sản Phẩm: </span> </br>
+                    <b name="title" id="view-name-product"></b>
+                </div>
+                <div class="form-group" style="font-size: 1.8rem">
+                    <img src="" class="thumbnail" id="view-image-product" style="width: 60px; height: 60px">
+                </div>
+                <div class="form-group" style="font-size: 1.8rem">
+                    <span for="description">Mô tả: </span>
+                    <span name="description" id="view-description-product"></span>
+                </div>
+                <div class="form-group" style="font-size: 1.8rem">
+                    <span for="id-product-category">Tên danh mục: </span>
+                    <i name="id-product-category"  id="view-category-product"></i>
+                </div>
+                <div class="auth-form-staff-control">
+                    <button class="btn-close-view-product">Đóng</button>
+                </div>    
+            </div>
+        </div>  
+    </div>
+</div>
+
+{{!-- Edit Product --}}
+<div class="modal modal-edit-product">
+    <div class="modal__overlay modal__overlay-register"></div>
+
+    <div class="modal__body modal__container">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h2>Sửa sản phẩm</h2>
+                </div>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Email của bạn" name="name" id="name-edit-product">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Tên của bạn" name="quantity" id="quantity-edit-product">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Số điện thoại của bạn" name="old_price" id="old_price-edit-product">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Số điện thoại của bạn" name="new_price" id="new_price-edit-product">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Địa chỉ của bạn" name="description" id="description-edit-product">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Địa chỉ của bạn" name="category" id="category-edit-product">
+                    </div>
+                </div>
+
+                <div class="auth-form__controls auth-form__controls-add">
+                    <button class="btn auth-form__controls-back btn--normal btn-close-edit-product" style="font-size: 1.6rem; background-color: rgba(0, 0, 0, 0.05);">Hủy</button>
+                    <button class="btn btn--primary btn-edit-product" style="font-size: 1.6rem">Sửa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Modal delete product --}}
+<div class="modal modal-delete-product">
+    <div class="modal__overlay modal__overlay-register"></div>
+
+    <div class="modal__body modal__container">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h2>Xóa Sản Phẩm</h2>
+                </div>
+
+                <div class="auth-form__content">
+                    <span>Bạn có chắc là muốn xóa sản phẩm <strong id="name-product-delete"> </strong></span>
+                </div>                
+
+                <div class="auth-form__controls auth-form__controls-add" style="margin-top: 30px">
+                    <button class="btn auth-form__controls-back btn--normal btn-close-delete-product" style="font-size: 1.6rem; background-color: rgba(0, 0, 0, 0.05);">Hủy</button>
+                    <button class="btn--delete btn-delete-product">Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

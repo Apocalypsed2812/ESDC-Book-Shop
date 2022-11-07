@@ -1,0 +1,120 @@
+
+    <div class="app-cart">
+        {{> headers/headerUser}}
+        <div class="cart-content">
+            <div class="grid wide">
+                <div class="cart-content-mt">
+                    <div class="cart-content__sale">
+                        Nhấn vào mục mã giám giá ở cuối trang để hưởng miễn phí vận chuyển bạn nhé
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="row">
+                        <div class="col l-4 cart-product__first">
+                            <input type="checkbox">
+                            <span>Sản phẩm</span>
+                        </div>
+                        <div class="col l-2">
+                            Đơn giá
+                        </div>
+                        <div class="col l-2">
+                            Số lượng
+                        </div>
+                        <div class="col l-2">
+                            Số tiền
+                        </div>
+                        <div class="col l-2">
+                            Thao tác
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-product-content">
+                    {{#each cart_product}}
+                    <div class="row">
+                        <div class="col l-4 cart-product-content__product">
+                            <input type="checkbox" name="" id="" class="check_product_cart" data-price="{{new_price}}" data-quantity_user="{{quantity_user}}" data-quantity="{{quantity}}">
+                            <img src="/assets/img/{{image}}" alt="" class="cart-product-content__img">
+                            <div class="cart-product-content__content">
+                                <h2 class="cart-product-content__heading">{{name}}</h2>
+                                <p class="cart-product-content__des">7 ngày miễn phí trả hàng</p>
+                            </div>
+                        </div>
+                        <div class="col l-2 cart-product-content__price">
+                            <div class="cart-product-content__price-old">đ{{formatNumber old_price}}</div>
+                            <div class="cart-product-content__price-new">đ{{formatNumber new_price}}</div>
+                        </div>
+                        <div class="col l-2 cart-product-content__quantity">
+                            <button class="sub-quantity-product-cart">-</button>
+                            <button class="current-quantity-product-cart">{{quantity_user}}</button>
+                            <button class="add-quantity-product-cart">+</button>
+                        </div>
+                        <div class="col l-2 cart-product-content__buy">
+                            <div>đ{{formatNumber new_price}}</div>
+                        </div>
+                        <div class="col l-2 cart-product-content__action">
+                            <div>
+                                <p class="cart-product-content__action-delete delete-product-cart" data-id="{{id}}">Xóa</p>
+                                <p class="cart-product-content__action-search">Tìm sản phẩm tương tự giỏ hàng</p>
+                            </div>
+                        </div>
+                        <input type="hidden" class="store-data-product" data-id="{{id}}" data-name="{{name}}" data-image="{{image}}" data-old_price="{{old_price}}" data-new_price="{{new_price}}" data-quantity="{{quantity}}" data-quantity_user="{{quantity_user}}">
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="cart-content-footer">
+                    <div class="cart-content-footer__content">
+                        <input type="checkbox" name="" id="">
+                        <p>Chọn tất cả (1)</p>
+                        <p>Xóa</p>
+                        <p>Lưu vào mục đã thanh toán</p>
+                    </div>
+                    <div class="cart-content-footer__button">
+                        <div class="cart-content-footer__button-paid">
+                            <p>Tổng thanh toán (<span class="total_quantity_cart">0</span> sản phẩm): </p>
+                            <p style="color: var(--primary-color);">đ</p>
+                            <p class="total_price_cart"></p>
+                        </div>
+                        <div class="btn btn--primary cart-content-footer__button-btn btn-order-product">Đặt Hàng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> footers/footerUser}} 
+    </div>
+
+<div class="modal modal-order">
+        <div class="modal__overlay modal__overlay-order"></div>
+
+        <div class="modal__body">
+            <!-- Register form -->
+            <div class="auth-form auth-form-register">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h2>Vui lòng nhập thông tin của bạn</h2>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Tên của bạn" name="name" id="name-order">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Số điện thoại của bạn" name="phone" id="phone-order">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Địa chỉ của bạn" name="address" id="address-order">
+                        </div>
+                        {{#each statistic}}
+                            <input value="{{_id}}" id="statistic-month" type="hidden"/>
+                        {{/each}}
+                    </div>
+
+                    <div class="auth-form__controls" style="margin-bottom: 20px">
+                        <button class="btn auth-form__controls-back btn--normal btn-back-order">TRỞ LẠI</button>
+                        <button class="btn btn--primary btn-order-confirm" data-total="0">ĐẶT HÀNG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

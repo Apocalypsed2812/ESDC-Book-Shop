@@ -1,0 +1,146 @@
+
+    <div class="app">
+        {{> headers/headerUser}}
+        <div class="app__container">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
+                        <nav class="category">
+                            <h3 class="category__heading">
+                                <i class="category__heading-icon fas fa-list"></i>
+                                Danh Mục
+                            </h3>
+                            <ul class="category-list">
+                                {{#each category}}
+                                <li class="category-item">
+                                    <a href="/user/home/{{_id}}" class="category-item__link">{{name}}</a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </nav>
+                    </div>
+    
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
+                            <span class="home-filter__label">Sắp xếp theo</span>
+                            <button class="home-filter__btn btn">Phổ biến</button>
+                            <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+                            <button class="home-filter__btn btn">Bán chạy</button>
+
+                            <div class="select-input">
+                                <span class="select-input__label">Giá</span>
+                                <i class="select-input__icon fas fa-angle-down"></i>
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Thấp đến cao</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Cao đến thấp</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="home-filter__page">
+                                <span class="home-filter__page-num">
+                                    <span class="home-filter__page-curent">1</span>/14
+                                </span>
+
+                                <div class="home-filter__page-control">
+                                    <a href="" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fas fa-angle-left"></i>
+                                    </a>
+                                    <a href="" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fas fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="home-product">
+                            <div class="row sm-gutter">
+                                {{#if product}}
+                                {{#each product}}
+                                    <div class="col l-2-4 m-4 c-6 home-product-item-wrapper">
+                                        <a class="home-product-item" href="/user/product_detail/{{_id}}">
+                                            <div class="home-product-item__img" style="background-image: url(/assets/img/{{image}});"></div>
+                                            <h4 class="home-product-item__name">{{name}}</h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-old">{{formatNumber old_price}}đ</span>
+                                                <span class="home-product-item__price-current">{{formatNumber new_price}}đ</span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <span class="home-product-item__like home-product-item__like--liked">
+                                                    <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                    <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                                </span>
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold">88 đã bán</span>
+                                            </div>
+                                            <div class="home-product-item__origin">
+                                                <span class="home-product-item__brand">Whoo</span>
+                                                <span class="home-product-item__origin-name">Nhật Bản</span>
+                                            </div>
+                                            <div class="home-product-item__favourite">
+                                                <i class="fas fa-check"></i>
+                                                <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__sale-off">
+                                                <span class="home-product-item__sale-off-percent">43%</span>
+                                                <span class="home-product-item__sale-off-label">GIẢM</span>
+                                            </div>
+                                        </a>      
+                                    </div>
+                                {{/each}}
+                                {{else}} <p class="not-found-product">Không tìm thấy sản phẩm. Vui lòng thử lại</p>
+                                {{/if}}
+                            </div>
+                        </div>
+
+                        <ul class="pagination home-product__pagination">
+                            {{{pagination_product_user count page}}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> footers/footerUser}} 
+    </div>
+

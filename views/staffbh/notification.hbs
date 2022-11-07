@@ -1,0 +1,151 @@
+<div class="app-admin">
+    {{> headers/headerStaffbh}}
+    <div class="notification-content">
+            <h2 class="notification-content__heading">Quản lý thông báo</h2>
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-12 notification-content__left">
+                        <button class="btn btn--primary btn-add-notify">Thêm thông báo</button>
+                        {{#each notification}}
+                            <div class="row notification-content__left-content">
+                                <div class="col l-3">
+                                    <img src="/assets/img/{{image}}" alt="" class="notification-content__left-img">
+                                </div>
+                                <div class="col l-7">
+                                    <div class="notification-content__left-9-heading">
+                                        {{title}}
+                                    </div>
+                                    <div class="notification-content__left-9-content">
+                                        {{content}}
+                                    </div>
+                                </div>
+                                <div class="col l-2 notification-content__left-action">
+                                    <div><button class="btn--view view-notify" data-id="{{_id}}" data-title="{{title}}" data-content="{{content}}" data-image="{{image}}">Xem</button></div>
+                                    <div><button class="btn--edit edit-notify" data-id="{{_id}}" data-title="{{title}}" data-content="{{content}}">Sửa</button></div>
+                                    <div><button class="btn--delete delete-notify" data-id="{{_id}}">Xóa</button></div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{> footers/footerAdmin}}
+</div>
+
+{{!-- Add Notification --}}
+<div class="modal modal-add-notify">
+    <div class="modal__overlay modal__overlay-register"></div>
+
+    <div class="modal__body modal__container">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h2>Thêm thông báo</h2>
+                </div>
+                <form action="/staff/addNotify" method="post" enctype="multipart/form-data">
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" required placeholder="Tiêu đề" name="title" id="title-add-notify">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" required placeholder="Nội dung" name="content" id="content-add-notify">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="file" class="auth-form__input" required accept="image/*" id="image" name="image" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__controls auth-form__controls-add">
+                        <button type="buton" class="btn auth-form__controls-back btn--normal btn-close-add-notify">Hủy</button>
+                        <button type="submit" class="btn btn--primary btn-add-notify" style="font-size: 1.6rem">Thêm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Edit Notification --}}
+<div class="modal modal-edit-notify">
+    <div class="modal__overlay modal__overlay-register"></div>
+
+    <div class="modal__body modal__container">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h2>Sửa thông báo</h2>
+                </div>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" required placeholder="Tiêu đề" name="title" id="title-edit-notify">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" required placeholder="Nội dung" name="content" id="content-edit-notify">
+                    </div>
+                </div>
+
+                <div class="auth-form__controls auth-form__controls-add">
+                    <button class="btn auth-form__controls-back btn--normal btn-close-edit-notify" style="font-size: 1.6rem; background-color: rgba(0, 0, 0, 0.05);">Hủy</button>
+                    <button class="btn btn--primary btn-edit-notify" style="font-size: 1.6rem">Sửa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Modal delete notification --}}
+<div class="modal modal-delete-notify">
+    <div class="modal__overlay modal__overlay-register"></div>
+
+    <div class="modal__body modal__container">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h2>Xóa thông báo</h2>
+                </div>
+
+                <div class="auth-form__content">
+                    <span>Bạn có chắc là muốn xóa thông báo này không ?</span>
+                </div>                
+
+                <div class="auth-form__controls auth-form__controls-add" style="margin-top: 30px">
+                    <button class="btn auth-form__controls-back btn--normal btn-close-delete-notify" style="font-size: 1.6rem; background-color: rgba(0, 0, 0, 0.05);">Hủy</button>
+                    <button class="btn--delete btn-delete-notify">Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- View Notification --}}
+<div class="modal modal-view-notify">
+    <div class="modal__overlay"></div>
+    <div class="modal__body modal__container">
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <h2 class="view-notify-heading">Xem thông báo</h2>
+                <div class="auth-form__group" style="font-size: 1.8rem">
+                    <b name="title" id="view-title-notify"></b>
+                </div>
+                <div class="auth-form__group" style="font-size: 1.8rem">
+                    <img src="" class="thumbnail" id="view-image-notify" style="width: 60px; height: 60px">
+                </div>
+                <div class="auth-form__group" style="font-size: 1.8rem">
+                    <b>Nội dung</b>
+					<i name="content" id="view-content-notify" rows="10" style="width:100%"></i>
+                </div>
+                <div class="auth-form-staff-control">
+                    <button class="btn-close-view-notify">Đóng</button>
+                </div>    
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+

@@ -1,0 +1,203 @@
+
+    <div class="app-infor-user">
+        {{> headers/headerUser}}
+        <div class="infor-user">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-3 infor-user__sidebar">
+                        <div class="infor-user__sidebar-header">
+                            <img src="/assets/img/qr_code.png" alt="" class="infor-user__sidebar-header-img">
+                            <div class="infor-user__sidebar-header-content">
+                                <p>anhtien123</p>
+                                <span>
+                                    <i class="fa-solid fa-pen"></i>
+                                    Sửa hồ sơ
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="infor-user__sidebar-content">
+                            <div class="infor-user__sidebar-ud">
+                                <i class="fa-brands fa-salesforce"></i>
+                                <div class="infor-user__sidebar-ud-content">
+                                    <span>Ưu đãi dành riêng cho bạn <span class="infor-user__sidebar-ud-content-icon">New</span></span>
+                                </div>
+                            </div>
+                            <div class="infor-user__sidebar-account">
+                                <i class="fa-solid fa-user-large"></i>
+                                <p>
+                                    <a href="" class="infor-user__sidebar-common-link">Tài khoản của tôi</a>
+                                </p>
+                            </div>
+                            <ul class="infor-user__sidebar-infor">
+                                <a href="/user/user_infor" class="infor-user__sidebar-common-link infor-user__sidebar-common--active">
+                                    <li>Hồ sơ</li>
+                                </a>
+                                <a href="" class="infor-user__sidebar-common-link">
+                                    <li>Ngân Hàng</li>
+                                </a>
+                                <a href="" class="infor-user__sidebar-common-link">
+                                    <li>Địa chỉ</li>
+                                </a>
+                                <a href="#" class="infor-user__sidebar-common-link">
+                                    <li class="change_password">Đổi mật khẩu</li>
+                                </a>
+                            </ul>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-order">
+                                <i class="fa-solid fa-receipt"></i>
+                                <p>
+                                    <a href="/user/order" class="infor-user__sidebar-common-link">Đơn mua</a>
+                                </p>
+                            </div>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-notify">
+                                <i class="fa-solid fa-bell"></i>
+                                <p>
+                                    <a href="/user/notification" class="infor-user__sidebar-common-link">Thông báo</a>
+                                </p>
+                            </div>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-vourcher">
+                                <i class="fa-brands fa-app-store-ios"></i>
+                                <p>
+                                    <a href="" class="infor-user__sidebar-common-link">Kho vourcher</a>
+                                </p>
+                            </div>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-coin">
+                                <i class="fa-brands fa-bitcoin"></i>
+                                <p>
+                                    <a href="" class="infor-user__sidebar-common-link">Shopee xu</a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col l-9 infor-user__infor">
+                        <div class="infor-user__heading">
+                            <p>Hồ sơ của tôi<p>
+                            <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+                        </div>
+                        <div class="row infor-user-table">
+                            {{#if account}}
+                            <div class="col l-8 infor-user__input">
+                                <div class="infor-user__form-group-username">
+                                    <label for="username">Tên đăng nhập</label>
+                                    <input required type="text" id="username-infor" name="username" value="{{account.username}}">
+                                    <p>Tên đăng nhập chỉ có thể thay đổi một lần</p>
+                                </div>
+                                <div class="infor-user__form-group-name">
+                                    <label for="name">Tên</label>
+                                    <input required type="text" id="name-infor" name="name" value="{{account.name}}">
+                                </div>
+                                <div class="infor-user__form-group-email">
+                                    <label for="email">Email</label>
+                                    <input required type="text" id="email-infor" name="email" value="{{account.email}}">
+                                </div>
+                                <div class="infor-user__form-group-phone">
+                                    <label for="phone">Số điện thoại</label>
+                                    <input required type="text" id="phone-infor" name="phone" value="{{account.phone}}">
+                                </div>
+                                <div class="infor-user__form-group-sex">
+                                    <label for="sex">Giới tính</label>
+                                    <input type="radio" id="sex-male-infor" name="sex" value="nam"><span>Nam</span>
+                                    <input type="radio" id="sex-female-infor" name="sex" value="nữ"><span>Nữ</span>
+                                    <input type="radio" id="sex-other-infor" name="sex" value="khác"><span>Khác</span>
+                                </div>
+                                <div class="infor-user__form-group-date">
+                                    <label for="date">Ngày sinh</label>
+                                    <select required name="date-infor" id="date-infor">
+                                        
+                                    </select>
+                                    <select required name="month-infor" id="month-infor">
+                                        
+                                    </select>
+                                    <select required name="year-infor" id="year-infor">
+                                        
+                                    </select>
+                                </div> 
+                                
+                                <button class="btn btn--primary btn-save-infor">Lưu</button>
+                            </div>
+                            
+                            <div class="col l-4 infor-user__avatar">
+                                {{#if account.image}}
+                                <img src="/assets/img/{{account.image}}" alt="" class="infor-user__avatar-img">
+                                {{else}}
+                                <img src="/assets/img/qr_code.png" alt="" class="infor-user__avatar-img">
+                                {{/if}}
+                                <div class="infor-user__avatar-content">
+                                    <button class="btn infor-user__avatar-btn">
+                                        Chọn ảnh
+                                    </button>
+                                    <p>Dung lượng file tối đa 1 MB</p>
+                                    <p>Định dạng: .JPEG, .PNG</p>
+                                </div>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> footers/footerUser}}
+    </div>
+
+<div class="modal modal-change-password">
+    <div class="modal__overlay modal__overlay-change-password"></div>
+
+    <div class="modal__body">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h2>Đổi mật khẩu</h2>
+                </div>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu cũ" name="old_password" id="old_password">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu mới" name="new_password" id="new_password">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu mới" name="re_new_password" id="re_new_password">
+                    </div>
+                </div>
+
+                <div class="auth-form__controls" style="margin-bottom: 20px">
+                    <button class="btn auth-form__controls-back btn--normal btn-back-change-password">TRỞ LẠI</button>
+                    <button class="btn btn--primary btn-change-password">Đổi mật khẩu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-change-avatar">
+    <div class="modal__overlay modal__overlay-register"></div>
+
+    <div class="modal__body">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <form action="/user/changeAvatar" method="post" enctype="multipart/form-data">
+                <div class="auth-form__header">
+                    <h2>Đổi ảnh đại diện</h2>
+                </div>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="file" class="auth-form__input" required accept="image/*" placeholder="Nhập mật khẩu cũ" name="image" id="image-avatar">
+                    </div>
+                </div>
+
+                <div class="auth-form__controls" style="margin-bottom: 20px">
+                    <button class="btn auth-form__controls-back btn--normal btn-back-change-avatar" type="button">TRỞ LẠI</button>
+                    <button class="btn btn--primary btn-change-avatar" type="submit">Đổi ảnh</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

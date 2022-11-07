@@ -1,0 +1,179 @@
+
+    <div class="app-infor-user">
+        {{> headers/headerUser}}
+        <div class="infor-user">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-3 infor-user__sidebar">
+                        <div class="infor-user__sidebar-header">
+                            <img src="/assets/img/qr_code.png" alt="" class="infor-user__sidebar-header-img">
+                            <div class="infor-user__sidebar-header-content">
+                                <p>anhtien123</p>
+                                <span>
+                                    <i class="fa-solid fa-pen"></i>
+                                    Sửa hồ sơ
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="infor-user__sidebar-content">
+                            <div class="infor-user__sidebar-ud">
+                                <i class="fa-brands fa-salesforce"></i>
+                                <div class="infor-user__sidebar-ud-content">
+                                    <span>Ưu đãi dành riêng cho bạn <span class="infor-user__sidebar-ud-content-icon">New</span></span>
+                                </div>
+                            </div>
+                            <div class="infor-user__sidebar-account">
+                                <i class="fa-solid fa-user-large"></i>
+                                <p>
+                                    <a href="" class="infor-user__sidebar-common-link">
+                                        Tài khoản của tôi
+                                    </a>
+                                </p>
+                            </div>
+                            <ul class="infor-user__sidebar-infor">
+                                <a href="/user/user_infor" class="infor-user__sidebar-common-link">
+                                    <li>Hồ sơ</li>
+                                </a>
+                                <a href="" class="infor-user__sidebar-common-link">
+                                    <li>Ngân Hàng</li>
+                                </a>
+                                <a href="" class="infor-user__sidebar-common-link">
+                                    <li>Địa chỉ</li>
+                                </a>
+                                <a href="" class="infor-user__sidebar-common-link">
+                                    <li class="change_password">Đổi mật khẩu</li>
+                                </a>
+                            </ul>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-order">
+                                <i class="fa-solid fa-receipt"></i>
+                                <p>
+                                    <a href="" class="infor-user__sidebar-common-link infor-user__sidebar-common--active">Đơn mua</a>
+                                </p>
+                            </div>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-notify">
+                                <i class="fa-solid fa-bell"></i>
+                                <p>
+                                    <a href="/user/notification" class="infor-user__sidebar-common-link">Thông báo</a>
+                                </p>
+                            </div>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-vourcher">
+                                <i class="fa-brands fa-app-store-ios"></i>
+                                <p>
+                                    <a href="" class="infor-user__sidebar-common-link">Kho vourcher</a>
+                                </p>
+                            </div>
+                            <div class="infor-user__sidebar-common infor-user__sidebar-coin">
+                                <i class="fa-brands fa-bitcoin"></i>
+                                <p>
+                                    <a href="" class="infor-user__sidebar-common-link">Shopee xu</a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col l-9 order-history">
+                        <div class="order-history__header">
+                            <ul class="order-history__list">
+                                <li class="order-history__item">
+                                    <a href="" class="order-history__link infor-user__sidebar-common--active">
+                                        Tất cả
+                                    </a>
+                                </li>
+                                <li class="order-history__item">
+                                    <a href="" class="order-history__link">
+                                        Chờ xác nhận
+                                    </a>
+                                </li>
+                                <li class="order-history__item">
+                                    <a href="" class="order-history__link">
+                                        Đang giao
+                                    </a>
+                                </li>
+                                 <li class="order-history__item">
+                                    <a href="" class="order-history__link">
+                                        Đã giao
+                                    </a>
+                                </li>
+                                <li class="order-history__item">
+                                    <a href="" class="order-history__link">
+                                        Đã hủy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="order-history__search">
+                            <i class="order-history__search-icon fas fa-search"></i>
+                            <input class="order-history__search-text" type="text" placeholder="Tìm kiếm theo tên Shop, ID đơn hàng hoặc tên sản phẩm">
+                        </div>
+                        {{#each order}}
+                        <div class="order-history__content">
+                            <p class="order-history__status">Trạng thái: <span>{{status}}</span></p>
+                            {{#each product}}
+                            <div style="margin-bottom: 20px">
+                                <div class="order-history__content-product">
+                                    <img src="/assets/img/{{image}}" alt="" class="order-history__content-img">
+                                    <div class="order-history__content-right">
+                                        <p class="order-history__content-heading">{{name}}</p>
+                                        <div class="order-history__content-first">
+                                            <p>Phân loại hàng: Màu Trắng</p>
+                                            <p>đ{{formatNumber old_price}}</p>
+                                        </div>
+                                        <div class="order-history__content-second">
+                                            <p>x{{quantity_user}}</p>
+                                            <p>đ{{formatNumber new_price}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+
+                            <div class="order-history__content-price">
+                                <span>Tổng số tiền: </span>
+                                <span>đ{{total}}</span>
+                            </div>
+                            
+                            <div class="order-history__content-btn">
+                                <button class="btn btn--primary btn-buy-again">Mua Lần Nữa</button>
+                                <button class="btn btn--normal-outline btn-view-order" data-total="{{total}}" data-name_customer="{{name}}" data-phone_customer="{{phone}}" data-address="{{address}}" data-status="{{status}}">Xem Chi Tiết Đơn Hàng</button>
+                                <button class="btn btn--normal-outline btn-view-shop">Xem đánh giá shop</button>
+                            </div>
+                        </div>
+                        {{/each}}
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> footers/footerUser}}
+    </div>
+
+<div class="modal modal-view-order">
+    <div class="modal__overlay modal__overlay-register"></div>
+
+    <div class="modal__body modal__container">
+        <!-- Register form -->
+        <div class="auth-form auth-form-staff">
+            <h2 class="auth-form-user-heading">Thông tin đơn hàng</h2>
+            <section class="profile">
+                <div class="profile-content">
+                    <div class="profile-group">
+                        <div class="profile-item"><strong> Tên khách hàng: </strong><span id="name-view-order"></span></div>
+                        <div class="profile-item"><strong> Số điện thoại: </strong><span id="phone-view-order"></span></div>
+                        <div class="profile-item"><strong> Địa chỉ: </strong><span id="address-view-order"></span></div>
+                        <div class="profile-item"><strong> Tổng tiền: </strong><span id="total-view-order"></span></div>
+                        <div class="profile-item"><strong> Trạng thái: </strong><span id="status-view-order"></span></div>
+                    </div>
+                </div>
+            </section>
+            <div class="auth-form-staff-control">
+                <button class="btn-close-view-order">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+

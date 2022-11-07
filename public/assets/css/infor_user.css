@@ -1,0 +1,338 @@
+.infor-user{
+    background-color: #f5f5f5;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.infor-user__infor{
+    background-color: var(--white-color);
+    margin-top: 20px;
+    border-radius: 4px;
+    padding: 10px 28px;
+}
+
+.infor-user__sidebar{
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.infor-user__sidebar-header{
+    display: flex;
+    margin-top: 10px;
+}
+
+.infor-user__sidebar-header-img{
+    width: 62px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.infor-user__sidebar-header-content{
+    font-size: 1.6rem;
+}
+
+.infor-user__sidebar-header-content p{
+    font-weight: bold;
+}
+
+.infor-user__sidebar-header-content span{
+    color: #888;
+    cursor: pointer;
+}
+
+.infor-user__sidebar-content{
+    margin-top: 40px;
+}
+
+.infor-user__sidebar-ud{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    cursor: pointer;
+}
+
+.infor-user__sidebar-ud i{
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.infor-user__sidebar-ud-content-icon{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    height: fit-content;
+    font-size: 1.4rem;
+}
+
+.infor-user__sidebar-account{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.infor-user__sidebar-account i{
+    margin-right: 10px;
+    font-size: 2.4rem;
+}
+
+.infor-user__sidebar-infor{
+    list-style: none;
+    font-size: 1.6rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.infor-user__sidebar-infor li{
+    margin-bottom: 10px;
+}
+
+.infor-user__sidebar-infor li:hover{
+    color: var(--primary-color);
+}
+
+.infor-user__sidebar-common{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.infor-user__sidebar-common i{
+    margin-right: 20px;
+    font-size: 2.4rem;
+}
+
+.infor-user__heading p:first-child{
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+.infor-user__heading p:last-child{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.infor-user__avatar{
+    text-align: center;
+}
+
+.infor-user__avatar-img{
+    width: 100px;
+    border-radius: 70%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.infor-user__avatar-btn{
+    border: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.infor-user__avatar-content p{
+    font-size: 1.4rem;
+    color: #666;
+}
+
+.infor-user-table{
+    margin-top: 40px;
+}
+
+.infor-user__form-group-username{
+    margin-left: 20px;
+    font-size: 1.6rem;
+}
+
+.infor-user__form-group-username label{
+    margin-right: 10px;
+    width: 50px;
+    color: #555;
+}
+
+.infor-user__form-group-username input{
+    padding: 4px 150px 4px 4px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.infor-user__form-group-username p{
+    font-size: 1.1rem;
+    padding-left: 120px;
+    color: #555;
+}
+
+.infor-user__form-group-name{
+    margin-left: 20px;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+
+.infor-user__form-group-name label{
+    margin-right: 10px;
+    width: 50px;
+    color: #555;
+    margin-left: 77px;
+}
+
+.infor-user__form-group-name input{
+    padding: 4px 150px 4px 4px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.infor-user__form-group-email{
+    margin-left: 20px;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+
+.infor-user__form-group-email label{
+    margin-right: 10px;
+    width: 50px;
+    color: #555;
+    margin-left: 65px;
+}
+
+.infor-user__form-group-email input{
+    padding: 4px 150px 4px 4px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.infor-user__form-group-phone input{
+    padding: 4px 150px 4px 4px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.infor-user__form-group-email span:last-child{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.infor-user__form-group-phone{
+    margin-left: 20px;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+
+.infor-user__form-group-phone label{
+    margin-right: 10px;
+    width: 50px;
+    color: #555;
+    margin-left: 12px;
+}
+
+.infor-user__form-group-phone span{
+    color: blue;
+    cursor: pointer;
+}
+
+.infor-user__form-group-name_shop{
+    margin-left: 20px;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+
+.infor-user__form-group-name_shop label{
+    margin-right: 10px;
+    width: 50px;
+    color: #555;
+    margin-left: 36px;
+}
+
+.infor-user__form-group-name_shop input{
+    padding: 4px 150px 4px 4px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+
+.infor-user__form-group-sex{
+    margin-left: 20px;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+
+.infor-user__form-group-sex label{
+    margin-right: 10px;
+    width: 50px;
+    color: #555;
+    margin-left: 43px;
+}
+
+.infor-user__form-group-sex input{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.infor-user__form-group-sex span{
+    margin-right: 20px;
+}
+
+.infor-user__form-group-date{
+    margin-left: 20px;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+
+.infor-user__form-group-date label{
+    margin-right: 10px;
+    width: 50px;
+    color: #555;
+    margin-left: 30px;
+}
+
+.infor-user__form-group-date select{
+    padding: 4px 63px 4px 4px;
+    cursor: pointer;
+}
+
+.btn-save-infor{
+    margin: 30px 0 50px 132px;
+    padding: 8px;
+}
+
+.infor-user__sidebar-common-link{
+    text-decoration: none;
+    display: block;
+    color: var(--black-color);
+}
+
+.infor-user__sidebar-order{
+    color: blue;
+}
+
+.infor-user__sidebar-notify,
+.infor-user__sidebar-common--active {
+    color: var(--primary-color);
+}
+
+.infor-user__sidebar-coin{
+    color: yellow;
+}
+
+.infor-user__sidebar-vourcher{
+    color: palevioletred;
+}
+
+.infor-user__sidebar-account{
+    color: blue;
+}
+
+.infor-user__sidebar-ud{
+    color: var(--primary-color);
+}
+
+.infor-user__sidebar-ud-content{
+    color: var(--text-color);
+}
+
+
+
+
+
+

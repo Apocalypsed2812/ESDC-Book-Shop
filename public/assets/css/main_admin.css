@@ -1,0 +1,148 @@
+/* Home */
+.header__admin{
+    height: var(--header-height);
+    background-color: var(--primary-color);
+}
+
+.header__admin-list{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.header__admin-item{
+    color: var(--white-color);
+    font-size: 1.8rem;
+    margin: 40px 0 20px 40px;
+    cursor: pointer;
+}
+
+.header__admin-item a{
+    color: var(--white-color);
+}
+
+.header__admin-item:hover, .header__admin-item a:hover{
+    border-bottom: 1px solid var(--white-color);
+    color: var(--white-color);
+}
+
+.container__admin {
+    min-height: 100vh;
+    margin: 40px 0 80px;
+}
+
+/* Staff */
+.btn-add-staff{
+    font-size: 2rem;
+}
+
+.modal.modal-view-staff{
+    display: none;
+}
+
+.modal__container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-group{
+    padding: 20px 10px;
+}
+
+.profile-item{
+    font-size: 1.6rem;
+    padding: 0 0 10px 20px;
+}
+
+.auth-form-user-heading{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.modal-add-staff{
+    font-size: 2rem;
+}
+
+.modal.modal-add-staff{
+    display: none;
+}
+
+.auth-form__header h2{
+    width: 100%;
+    font-size: 2.2rem;
+    text-align: center;
+    color: blue;
+    margin-top: 10px;
+}
+
+.btn-add-staff{
+    font-size: 1.6rem;
+}
+
+.auth-form__controls-add{
+    padding-bottom: 40px;
+}
+
+.modal.modal-edit-staff{
+    display: none;
+}
+
+.modal.modal-delete-user{
+    display: none;
+}
+
+.modal.modal-view-user{
+    display: none;
+}
+
+.auth-form-user-control{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-close-view-user{
+    font-size: 1.8rem;
+    color: var(--white-color);
+    background-color: #999;
+    border: 1px solid var(--white-color);
+    margin: 0 20px 20px 0;
+    padding: 4px 16px;
+    border-radius: 4px;
+}
+
+.auth-form-staff-control{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-close-view-order,
+.btn-close-view-staff{
+    font-size: 1.8rem;
+    color: var(--white-color);
+    background-color: #999;
+    border: 1px solid var(--white-color);
+    margin: 0 20px 20px 0;
+    padding: 4px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-form__content{
+    font-size: 2rem;
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.btn-delete-user{
+    font-size: 1.6rem; 
+    background-color: white; 
+    border: 1px solid red; color: red;
+}

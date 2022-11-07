@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee | Mua và Bán Trên Ứng Dụng Di Động Hoặc Website</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/img/logo-shopee.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/grid.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
+    <link rel="stylesheet" href="/assets/css/infor_user.css">
+    <link rel="stylesheet" href="/assets/css/notification.css">
+    <link rel="stylesheet" href="/assets/css/product_detail.css">
+    <link rel="stylesheet" href="/assets/css/main_staff.css">
+    <link rel="stylesheet" href="/assets/css/main_admin.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div id="toast"></div>
+    {{{body}}}
+    <!-- Modal -->
+    <div class="modal modal-login">
+        <div class="modal__overlay modal__overlay-login"></div>
+
+        <div class="modal__body">
+            <!-- Login form -->
+            <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        <span class="auth-form__switch-btn switch-register">Đăng kí</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Username của bạn" name="username" id="username-login">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Password của bạn" name="password" id="password-login">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <div class="auth-form__help">
+                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                            <span class="auth-form__help-separate"></span>
+                            <a href="" class="auth-form__help-link">Cần trợ giúp ?</a>
+                        </div>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls-back btn--normal btn-back-login">TRỞ LẠI</button>
+                        <button class="btn btn--primary btn-login">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Google
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-register">
+        <div class="modal__overlay modal__overlay-register"></div>
+
+        <div class="modal__body">
+            <!-- Register form -->
+            <div class="auth-form auth-form-register">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng kí</h3>
+                        <span class="auth-form__switch-btn switch-login">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Username của bạn" name="username" id="username">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Password của bạn" name="password" id="password">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu của bạn" name="rePassword" id="rePassword">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng kí, bạn đã đồng ý với F8-Shop về
+                            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls-back btn--normal btn-back-register">TRỞ LẠI</button>
+                        <button class="btn btn--primary btn-register">ĐĂNG KÍ</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Google
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{!-- <div class="modal modal-change-password">
+    <div class="modal__overlay modal__overlay-change-password"></div>
+
+    <div class="modal__body">
+        <!-- Register form -->
+        <div class="auth-form auth-form-register">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h2>Đổi mật khẩu</h2>
+                </div>
+
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu cũ" name="old_password" id="old_password">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu mới" name="new_password" id="new_password">
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu mới" name="re_new_password" id="re_new_password">
+                    </div>
+                </div>
+
+                <div class="auth-form__controls" style="margin-bottom: 20px">
+                    <button class="btn auth-form__controls-back btn--normal btn-back-change-password">TRỞ LẠI</button>
+                    <button class="btn btn--primary btn-change-password">Đổi mật khẩu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+    <script src="/assets/ckeditor/ckeditor.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

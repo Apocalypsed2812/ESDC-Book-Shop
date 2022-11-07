@@ -1,0 +1,83 @@
+<div class="app__container">
+    {{> headers/headerStaffk}}
+        <div class="staff-product">
+            <div class="container add-product-container pt-5">
+                <div class="form-group">
+                    {{#if staff}}
+                    <b>Tên nhân viên: {{staff.username}}</b> <br/>
+                    <i>Mã nhân viên:</i>  <i id="id-staff">{{staff.staff_id}}</i> <br/>
+                    {{/if}}
+                </div>
+                <form action="/staff/addProduct" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name-product">ID sản phẩm</label>
+                        <input id="id-product" type="text" name="id" required class="form-control" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name-product">Tên sản phẩm</label>
+                        <input id="name-product" type="text" name="name" required class="form-control" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Số lượng</label>
+                        <input id="quantity" type="number" name="quantity" required class="form-control" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Mô tả</label>
+                        <textarea id="add-product-description" name="description" rows="7" style="width: 100%" required class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Danh mục</label>
+                        <select name="category" required class="form-control" id="staff_category_product" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                            <option value="">Chọn Danh Mục</option>
+                            {{#each category}}
+                                <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <input type="hidden" value="" name="category_id" id="staff_category_id">
+                    <div class="form-group">
+                        <label for="price">Giá cũ</label>
+                        <input id="old_price" type="text" name="old_price" required class="form-control" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price">Giá mới</label>
+                        <input id="new_price" type="text" name="new_price" required class="form-control" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image" class="">Ảnh minh họa</label>
+                        <input type="file" class="form-control" required accept="image/*" id="image" name="image" style="height: 40px; font-size: 1.6rem; padding: 2px 0 2px 16px">
+                    </div>
+
+                    <div class="form-group pb-5 mt-5" style="margin-bottom: 0">
+                        <button type="submit" onclick="addProduct()" class="btn btn-primary" style="font-size: 1.6rem">Thêm sản phẩm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {{> footers/footerAdmin}}
+</div>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/assets/ckeditor/ckeditor.js"></script>
+
+{{!-- <script>
+    var desc = CKEDITOR.replace('description')
+    document.getElementById('description').value = desc.getData()
+</script> --}}

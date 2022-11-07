@@ -1,0 +1,61 @@
+
+    <div class="app-notification">
+        {{> headers/headerUser}}
+        <div class="notification-content">
+            <h2 class="notification-content__heading">Tin Tức</h2>
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-9 notification-content__left">
+                        {{#each notify_detail}}
+                            <h2 class="notification-detail__heading">{{title}}</h2>
+                            <div class="notification-detail__content">
+                                {{content}}
+                            </div>
+                            <div class="notification-detail__img">
+                                <img src="/assets/img/{{image}}" alt="">
+                            </div>
+                        {{/each}}
+                    </div>
+                    <div class="col l-3 notification-content__right">
+                        <div class="notification-content__right-category">
+                            <p>Danh mục</p>
+                            <ul class="notification-content__right-list">
+                                <li class="notification-content__right-item">
+                                    Tin nội bộ
+                                </li>
+                                <li class="notification-content__right-item">
+                                    Cẩm nang
+                                </li>
+                                <li class="notification-content__right-item">
+                                    Tin mới nhất
+                                </li>
+                                <li class="notification-content__right-item">
+                                    Đồ mới
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="notification-content__right-category">
+                            <p>Liên hệ</p>
+                            <ul class="notification-content__right-contact-list">
+                                <li class="notification-content__right-item">
+                                    Địa chỉ:
+                                    19 Nguyễn Hữu Thọ, P.Tân Phong, Q.7, HCM
+                                </li>
+                                <li class="notification-content__right-item">
+                                    Email:
+                                    kidtoy@gmail.com
+                                </li>
+                                <li class="notification-content__right-item">
+                                    Hotline:
+                                    012 345 6789
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{> footers/footerUser}}
+    </div>

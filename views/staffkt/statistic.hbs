@@ -1,0 +1,35 @@
+<div class="app__container">
+    {{> headers/headerStaffkt}}
+    <div class="staff-product" style="padding-top: 20px;">
+        <div class="grid wide">
+            <h1 style="margin: 0 0 20px; font-size: 2.5rem">Thống kê sản phẩm</h1>
+            <div class="row">
+                <div class="col l-4">
+                    <input type="number" placeholder="Năm" id="year-statistic" class="mx-2 mb-5" style="width: 90%; height: 34px; font-size: 1.6rem; padding: 8px 4px" >
+                </div>
+                <div class="col l-4">
+                    <select id="month-statistic" class="mx-2 pb-1 pt-1 mb-5" style="width: 90%; height: 34px; font-size: 1.6rem; padding: 8px 4px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="col l-4">
+                    <button id="btn-view-statistic" class="btn btn--primary">Xem</button>
+                </div>
+            </div>  
+            <canvas id="myChart" width="200" height="200"></canvas>
+        </div>  
+    </div>
+    {{> footers/footerAdmin}}
+</div>
+
