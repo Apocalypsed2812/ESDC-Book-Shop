@@ -8,7 +8,9 @@
                         <div class="infor-user__sidebar-header">
                             <img src="/assets/img/qr_code.png" alt="" class="infor-user__sidebar-header-img">
                             <div class="infor-user__sidebar-header-content">
-                                <p>anhtien123</p>
+                                {{#if account}}
+                                <p>{{account.username}}</p>
+                                {{/if}}
                                 <span>
                                     <i class="fa-solid fa-pen"></i>
                                     Sửa hồ sơ

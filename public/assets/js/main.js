@@ -2752,6 +2752,9 @@ if(btn_create_import){
         let total = product_import.reduce((acc, item) => {
             return acc += Number(item.quantity * item.new_price)
         }, 0)
+
+        total = total + '.000'
+        console.log(total)
         // let total = 0
         // product_import.forEach(item => {
         //     console.log("Item", item.new_price * item.quantity)

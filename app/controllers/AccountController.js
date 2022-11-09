@@ -204,7 +204,7 @@ class AccountController{
             }
         } 
         else {
-            return res.json({code: 4, message: 'Tài khoản không tồn tại'})
+            return res.json({code: 6, message: 'Tài khoản không tồn tại'})
         }
     }
 

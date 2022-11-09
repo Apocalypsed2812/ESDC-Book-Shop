@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const Import = new Schema({
     id_staff: { type: String},
-    total: { type: Number },
+    total: { type: String },
     name_customer: { type: String },
     phone: { type: String },
     address: { type: String },
