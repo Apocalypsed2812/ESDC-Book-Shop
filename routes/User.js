@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 const UserController = require('../app/controllers/UserController');
 const checkUser = require("../app/middleware/checkUser");
-const checkLogin = require("../app/middleware/checkLogin");
+//const checkLogin = require("../app/middleware/checkLogin");
 // const checkChangePassword = require("../app/middleware/checkChangePassword");
 
 router.use(checkUser);

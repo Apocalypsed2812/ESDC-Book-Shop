@@ -1,8 +1,6 @@
 const Account = require('../models/Account');
 const Staff = require('../models/Staff');
 const bcrypt = require("bcrypt");
-// const checkLogin = require('../models/CheckLogin')
-// const Transaction = require('../models/Transaction')
 const Bill = require('../models/Bill');
 
 class AdminController {

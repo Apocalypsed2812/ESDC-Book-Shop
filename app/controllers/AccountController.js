@@ -7,13 +7,8 @@ const multiparty = require('multiparty');
 const upload = require('../../upload');
 const crypto = require('crypto');
 const nodemailer =  require('nodemailer');
-const OTP = require('../models/OTP');
-const otp = require('../../util/OTP');
 const jwt = require("jsonwebtoken");
 const credentials = require("../../credentials");
-const checkLogin = require('../models/CheckLogin')
-const block_account = require('../../util/block_account');
-const Counter = require('../models/Counter');
 
 class AccountController{
 

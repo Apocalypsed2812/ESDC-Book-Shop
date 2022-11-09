@@ -4,7 +4,7 @@ const router = express.Router()
 const AdminController = require('../app/controllers/AdminController');
 const checkAdmin = require("../app/middleware/checkAdmin");
 //const flash = require("../app/middleware/flashMessage");
-const checkLogin = require("../app/middleware/checkLogin");
+//const checkLogin = require("../app/middleware/checkLogin");
 
 //Check Login
 //router.use(checkLogin)
