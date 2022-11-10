@@ -57,7 +57,7 @@ const helpers = {
 
     formatNumber: (number) => {
         let num = format_number(number)
-        num = num + '.000'
+        num = num + ',000'
         return num
     },
 }
