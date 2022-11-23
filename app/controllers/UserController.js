@@ -434,6 +434,7 @@ class UserController {
         let account = req.account
         let user_id = account._id
         let {name, phone, address, total, array_product} = req.body
+        let date = getToday()
         let data = {
             name,
             phone, 
@@ -441,7 +442,8 @@ class UserController {
             total,
             user_id,
             status: 'Chờ Lấy Hàng',
-            product: JSON.parse(array_product)
+            product: JSON.parse(array_product),
+            date,
         }
         const order = new Order(data)
         order.save()
@@ -500,6 +502,15 @@ class UserController {
         })
         res.redirect('/user/user_infor')
     }
+}
+
+function getToday() {
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, "0");
+    let mm = String(today.getMonth() + 1).padStart(2, "0");
+    let yyyy = today.getFullYear();
+    today = mm + "/" + dd + "/" + yyyy;
+    return today;
 }
 
 module.exports = new UserController;

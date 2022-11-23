@@ -9,6 +9,7 @@ const Order = new Schema({
     total: { type: String },
     status: { type: String },
     user_id: { type: String },
+    date: { type: String },
     },
     {
         timestamps: true,

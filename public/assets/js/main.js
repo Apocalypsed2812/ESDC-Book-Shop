@@ -2278,12 +2278,14 @@ if(staff_view_order){
             let status = item.getAttribute("data-status")
             let id = item.getAttribute("data-id")
             let total = item.getAttribute("data-total")
+            let date = item.getAttribute("data-date")
             
             document.getElementById('view-name-order').innerHTML = name
             document.getElementById('view-phone-order').innerHTML = phone
             document.getElementById('view-address-order').innerHTML = address
             document.getElementById('view-total-order').innerHTML = total
             document.getElementById('view-status-order').innerHTML = status
+            document.getElementById('view-date-order').innerHTML = date
     
             if(document.querySelector('.btn-detail-view-order')){
                 document.querySelector('.btn-detail-view-order').setAttribute("data-id", id)
